@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <title>Hadithi Zako</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    .story-box {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      background: #fff;
+      margin-top: 20px;
+      height: 350px;
+      overflow-y: auto;
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .buttons {
+      margin-top: 10px;
+      text-align: center;
+    }
+    button {
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>📖 Hadithi Zako</h1>
+  <div>
+    <label>Ingiza jina lako:</label><br>
+    <input type="text" id="jina" placeholder="Andika jina hapa...">
+  </div>
+  <div class="buttons">
+    <button onclick="andikaHadithi('mjanja')">Hadithi ya kuwa Mjanja</button>
+    <button onclick="andikaHadithi('mshamba')">Hadithi ya kuwa Mshamba</button>
+  </div>
+
+  <div class="story-box" id="hadithi"></div>
+
+  <script>
+    const hadithiBox = document.getElementById("hadithi");
+
+    
+    const mshambaHadithi = [
+    
+
+`Hadithi ya {jina} na Friji  
+
+Siku moja {jina} alipelekwa mjini kwa jirani yake.  
+Alipoingia sebuleni, akaona boksi jeupe lenye mlango.  
+Akasema:  
+"Jamani! Hili ni kaburi la chuma, mbona lipo ndani ya nyumba?"  
+
+Wakamjibu:  
+"Hapana, hii ni friji."  
+
+{jina} akafungua mlango, akashangaa barafu imemiminika.  
+Akaanza kupiga mayowe:  
+"Jamani! Nimefungua mlango wa mlima Kilimanjaro, theluji imenifuata hadi ndani!" 😂  
+
+Akaona kuku waliogandishwa. Akasema:  
+"Wee! Huyu jamaa amewaua kuku wake kwa barafu badala ya kisu, huu ni ushetani kabisa!"  
+
+---
+
+Visa Vingine  
+
+Baada ya muda, aliona taa ndogo ya microwave ikiwaka.  
+Akasema:  
+"Wee! Hii ni redio ya kuoka ugali? Mbona inang’aa na mlango umefungwa?"  
+
+Alipowekwa chakula ndani, kikaanza kuzunguka.  
+{jina} akapiga kelele:  
+"Jamani! Wanazungusha chakula kama ng’ombe wa kusaga nafaka, mbona wanakiadhibu hivi?" 🤣  
+
+---
+
+Mwisho wa Hadithi  
+
+Hatimaye, aliona blender inazungusha juice.  
+Akasema:  
+"Hii siyo mashine ya juisi, hii ni mashine ya kuua embe kwa mateso!"  
+
+Kijiji kizima kikamcheka, wakamuita:  
+“{jina}, mshamba wa friji na juisi za mateso!”  
+MWISHO`,
+
+
+`Hadithi ya {jina} na Hospitali ya Kisasa  
+
+{jina} aliugua, ndugu zake wakampeleka hospitali ya mjini.  
+Alipoingia tu akashangaa vitanda vinatembea pekee yake.  
+Akasema:  
+"Hii siyo hospitali, hii ni mazishi ya wagonjwa wakiwa hai!"  
+
+Wauguzi wakamwambia:  
+"Hapana, hivi ni vitanda vya wagonjwa."  
+
+---
+
+Matukio ya Ajabu  
+
+Daktari akamwambia:  
+"Tupime moyo wako."  
+Akamwekea stethoscope kifuani.  
+{jina} akasema:  
+"Wee! Unanilaza na bomba la kusikiliza siri zangu? Mimi siwezi kuamini hii."  
+
+Baadaye wakampeleka kwenye X-ray.  
+Akaona picha ya mifupa yake.  
+Akapiga kelele:  
+"Jamani! Wameona mifupa yangu, sasa watayauza kama mifupa ya ng’ombe!" 😂  
+
+---
+
+Mwisho wa Hadithi  
+
+Wakampatia dawa kwenye dripu.  
+Alipoona maji yanaingia mkononi akalia:  
+"Jamani! Wananipa maji ya kuoga ndani ya mishipa!"  
+
+Watu wote hospitalini wakacheka, wakamuita:  
+“{jina}, mshamba wa X-ray na maji ya mishipa!”  
+MWISHO`,
+
+
+`Hadithi ya {jina} na Choo cha Kisasa  
+
+Siku moja {jina} aliingia kwenye hoteli kubwa mjini.  
+Alipotaka kujisaidia, akaingia chooni.  
+Akakuta choo cha kuflash.  
+Akasema:  
+"Hii ni sufuria ya kuosha miguu? Mbona iko katikati ya chumba?"  
+
+---
+
+Matukio ya Vichekesho  
+
+Alipojisaidia, akabonyeza kitufe, maji yakazunguka na kusafisha.  
+Akapiga kelele:  
+"Jamani! Kijiji kimekuja kuninyang’anya choo, kinafuata hadi kinazunguka!" 😂  
+
+Baadaye akaona hand dryer (mashine ya kukausha mikono).  
+Akaweka mkono ndani, upepo mkali ukampiga.  
+Akarudi nyuma kwa hofu:  
+"Wee! Kuna pepo wananiibia mikono!"  
+
+---
+
+Mwisho wa Hadithi  
+
+Akatoka nje na kuwaambia watu:  
+"Jamani! Choo chenu ni mchawi, kimenimezea siri zangu na kimenipiga upepo wa jini."  
+
+Watu wakamcheka, wakamuita:  
+“{jina}, mshamba wa choo kinachoosha na upepo wa mikono!”  
+MWISHO`,
+
+`Hadithi ya {jina} na ATM  
+
+Siku moja {jina} alienda mjini mara ya kwanza kabisa.  
+Akaona watu wamesimama mstari mrefu mbele ya ukuta wenye mashimo na taa.  
+Akauliza:  
+"Wee ndugu, mnangoja nini?"  
+
+Wakamwambia:  
+"Hii ni ATM, inatoa hela."  
+
+{jina} akashangaa:  
+"Kumbe ukuta nao una hela zake? Basi ngoja na mimi nijaribu."  
+
+Alipofika mbele, akatoa kadi ya bisi akadhani ndio kadi ya benki, akaingiza.  
+Mashine ikakataa, akapiga kelele:  
+"Jamani! Ukuta umenimeza tiketi ya basi, sasa nitakuwaje?"  
+
+Akaamua kuandika namba yake ya simu pale kwenye mashine, akidhani itamtumia hela kwa M-Pesa.  
+Ghafla ikatoka risiti tupu, {jina} akasema:  
+"Ee Mungu wangu, nimepewa noti isiyo na maandishi, hii hela feki mtupu!" 😂  
+
+---`,
+
+`Hadithi ya {jina} na Selfie ya Kwanza  
+
+{jina} alinunua simu mpya mjini.  
+Wakamwambia:  
+"Hii simu inaweza kupiga picha ya uso wako mwenyewe."  
+
+Akasema:  
+"Kwani mimi sijijui? Mbona nimeshajiona kwa kioo mara nyingi?"  
+
+Basi akajaribu selfie. Akaona uso wake kwa screen, akashtuka:  
+"Aaah! Kumbe na mimi nina ndugu pacha nilokuwa simjui? Amejificha kwenye simu hii!"  
+
+Akaanza kumwambia picha yake:  
+"Pole kaka yangu, nimekukumbuka sana. Utoke lini huko ndani?" 😂  
+
+---`,
+
+`Hadithi ya {jina} na WiFi  
+
+{jina} alienda mjengoni kwa first time, akaona watu wanatumia simu zao bila vocha.  
+Akauliza:  
+"Mnafanyaje bila kununua vocha?"  
+
+Wakamjibu:  
+"Tunatumia WiFi."  
+
+{jina} akasema:  
+"Eeeh! Hilo jina ni la mnyama au mchawi? Maana nasikia kama fisi."  
+
+Akaja akashikilia ceiling akatafuta waya.  
+"Kwanini simwoni huyu WiFi? Mbona mnatumia bila kumuita hapa?"  
+
+Kisha akaandika meseji kwa simu yake:  
+"WiFi, njoo hapa unipe data. Nitakulipa kuku watatu!" 😂  
+
+MWISHO`,
+
+`Hadithi ya {jina} na Simu ya Touchscreen  
+
+Siku moja {jina} alipata simu ya kisasa yenye screen kubwa.  
+Alipojaribu kuandika meseji, hakukuwa na vitufe vya kubonyeza.  
+Akashangaa:  
+"Eeeh! Hii simu imenizidi ujanja, imekula vitufe vyake vyote!"  
+
+Akaanza kugonga simu kwa nguvu kwa kijiti ili vitufe vitoke.  
+Screen ikapasuka kidogo.  
+{jina} akasema:  
+"Aaah! Sasa nimefanikiwa, nimeshaivunja ili vitufe virejee!" 😂😂  
+
+---`,
+
+`Hadithi ya {jina} na Cinema 3D  
+
+{jina} alipelekwa kwenye sinema ya 3D kwa mara ya kwanza.  
+Akapewa miwani maalum, akaikataa akasema:  
+"Hii miwani sihitaji, macho yangu bado mapya."  
+
+Alipoanza kutazama filamu, ghafla paka mkubwa akaruka kwenye screen.  
+{jina} akapiga kelele:  
+"Jamani! Paka anatoka kwenye ukuta, kimbieni!"  
+
+Akasimama akajaribu kufukuza paka kwa kijiti, watu ukumbini wakacheka hadi wakaanguka. 😂  
+
+---`,
+
+`Hadithi ya {jina} na Lifti ya Hospitali  
+
+Siku moja {jina} alipelekwa hospitali kubwa mjini.  
+Akaona watu wakiingia kwenye lifti (elevator) na milango inafunga.  
+Baada ya muda ikafunguka, wakatoka watu wengine tofauti.  
+
+{jina} akapiga kelele:  
+"Eeeh! Hii sanduku linafanya watu kubadilika! Mzee akiingia, kijana anatoka!"  
+
+Akaamua naye aingie.  
+Baada ya sekunde chache mlango ulipofunguka na mama mmoja akatoka, {jina} akasema:  
+"Jamani! Mimi nilitaka kutoka, imegeuza jinsia yangu kabisa!" 🤣🤣  
+
+MWISHO
+`,
+
+`Hadithi ya {jina} na ATM  
+
+{jina} alipelekwa mjini mara ya kwanza akaona mashine ya ATM.  
+Akasimama pembeni akawaona watu wanaweka kadi na hela zinatoka.  
+
+{jina} akajisemea:  
+"Eeeh! Hii ni mti wa pesa wa kisasa!"  
+
+Akasubiri foleni ikipungua, akaenda na tiketi ya basi akaiingiza kwenye ATM.  
+Baada ya sekunde chache ikatoka tena ile tiketi.  
+
+{jina} akapiga kelele:  
+"Jamani! Mashine imenitupia hela kwa tiketi, sasa nataka niweke kuku wangu atoe magunia ya mchele!" 😂😂  
+
+---`,
+
+`Hadithi ya {jina} na Remote ya TV  
+
+Siku moja {jina} alipewa remote kwa mara ya kwanza.  
+Akaishika akibofya kila button, TV ikiwaka na kuzima.  
+
+Baada ya dakika chache, akaja jirani kumuona.  
+{jina} akasema:  
+"Hii kijiti ni ya kichawi sana! Inabadilisha picha kwenye boksi lile!"  
+
+Kisha akamfuata paka wake, akamuelekezea remote na kubofya.  
+Alipoona paka hajatoka machozi akasema kwa hasira:  
+"Aaah basi hii uchawi wake ni wa kiwango kidogo, haina nguvu kwa wanyama!" 🤣🤣  
+
+---`,
+
+`Hadithi ya {jina} na Supermarket  
+
+{jina} aliingia supermarket kwa mara ya kwanza.  
+Akaona mlango unafunguka wenyewe alipokaribia.  
+Akashtuka akakimbia nyuma akasema:  
+"Jamani! Mlango unanijua mimi!"  
+
+Alipoingia ndani akaona trolley (toroli la kusukuma).  
+Akaanza kulisukuma huku akisema:  
+"Naenda kujaribu gari la bure mjini!"  
+
+Mwisho wake akaweka bidhaa kibao ndani, akaja kasiri cashier alipomwambia lazima alipe.  
+{jina} akasema kwa sauti:  
+"Aaah jamani, mimi nilidhani hii ni ofa ya kujaribu gari na chakula bure!" 😂😂  
+
+MWISHO
+`,
+
+`Hadithi ya {jina} na Lift ya Jengo  
+
+{jina} alipelekwa mjini kwa mara ya kwanza akaingia jengo refu sana.  
+Akaona mlango wa chuma unafunguka na kufunga — kumbe ni lift.  
+
+Akauliza: "Hii ni duka la ndizi?"  
+Wakamwambia: "Hapana, hii ni lift, inaenda juu na chini."  
+
+Baada ya muda mzee mmoja mwenye ndevu mrefu aliingia lift.  
+Mlango ukafunga, baada ya dakika chache, ukafunguka akatoka dada mdogo mzuri sana.  
+
+{jina} akapiga kelele:  
+"Eeeh! Jamani! Hii mashine inabadilisha watu!  
+Ngoja nami niingize bibi yangu humu atoke akiwa college girl!" 😂😂  
+
+
+`,
+
+`Hadithi ya {jina} na Bafuni ya Hoteli  
+
+{jina} aliwahi kulala hoteli mara yake ya kwanza.  
+Alipoingia bafuni akakuta kuna shower.  
+Akaanza kubonyeza kioo cha ku-control maji.  
+
+Badala ya maji kutoka, akasikia heater ikiwasha moto.  
+Akajitupa chini akapiga mayowe:  
+"Jamani! Bafu linataka kunichoma moto!"  
+
+Kesho yake akajaribu tena, maji yakaanza kutoka juu.  
+Akashtuka akakimbia nje uchi akisema:  
+"Kuna mtu ananitemea mate juu! Msaada jamani!" 🤣🤣  
+
+
+`,
+
+`Hadithi ya {jina} na Safari ya Ndege  
+
+Siku moja {jina} alipanda ndege kwa mara ya kwanza.  
+Alipokaa kiti chake, akaona kuna mkanda wa seatbelt.  
+Akaanza kuufunga shingoni kama tai.  
+
+Airhostess akamwambia:  
+"Sir, that is for your waist."  
+{jina} akajibu:  
+"Eeh! Mimi najua, lakini nikiweka shingoni nikidondoka angalau nitanyongwa haraka nisiteseke!" 😂  
+
+Baada ya ndege kuanza kuruka, akasikia mlango umefungwa vizuri.  
+Akauliza kwa sauti:  
+"Kama ikibidi kushuka mapema, dereva atasimamisha wapi barabarani?" 🤣🤣  
+
+MWISHO
+`,
+`Hadithi ya {jina} Mshamba na Gari la Automatic
+
+Siku moja {jina} alipanda gari la automatic mara ya kwanza.  
+Dereva alipowasha, gari likaanza kusogea bila kubonyeza kanyagio.  
+
+{jina} akapiga mayowe:  
+"Jamani! Gari linaendesha lenyewe, limeota roho ya binadamu!"  
+
+Alipoona dereva akihamisha lever ndogo tu, gari likakimbia zaidi.  
+Akasema: "Hii lever ni kama fimbo ya mchawi, unaipeleka mbele gari linakimbia, ukiirudisha nyuma gari linakimbia kurudi!" 😂  
+
+Mwisho wa Hadithi
+
+Baada ya kurudi kijijini, aliwaambia wenzake:  
+"Mjini wameshafuga farasi wa chuma, unawasukuma kwa fimbo ndogo wanakimbia wenyewe."  
+MWISHO`,
+
+`Hadithi ya {jina} Mshamba na Microphone
+
+Katika harusi ya mjini, {jina} alipewa kipaza sauti.  
+Alipozungumza kidogo, sauti yake ikatoka kwenye spika kubwa.  
+
+Akasema: "Jamani! Koo yangu imehama, sasa inakaa ndani ya boksi kubwa!"  
+
+Akaweka kipaza karibu na mdomo zaidi, spika ikatoa sauti kubwa zaidi.  
+Akashtuka akasema: "Hii kitu inanidanganya, kila neno nalosema inarudia kwa kelele!"  
+
+Mwisho wa Hadithi
+
+Kijijini akawaambia:  
+"Mjini wana kioo cha maneno, ukiongea wanakupa jibu mara mbili. Ndio maana watu wa mjini hupiga kelele kila wakati." 😂  
+MWISHO`,
+
+`Hadithi ya {jina} Mshamba na Microwave
+
+{jina} alipelekwa jikoni kwa rafiki yake mjini.  
+Alipewa chakula kilichohifadhiwa, wakaweka kwenye microwave.  
+
+Sekunde chache tu, chakula kikatoka kikiwa cha moto.  
+{jina} akasema: "Hii lazima ni tanuri la majini, linaivisha chakula bila kuni!"  
+
+Akaweka kikombe cha maji ndani, akaviona vinachemka ghafla.  
+Akashangaa: "Yaani maji ya baridi yanachemka bila jiko? Hii nyumba itaniunguza!" 😂  
+
+Mwisho wa Hadithi
+
+Kurudi kijijini aliwaambia:  
+"Mjini hawana makaa, wana sanduku linaloivisha ugali kwa dakika moja. Ni kama kuchomea viazi kwa radi ya hewani."  
+MWISHO`,
+`Hadithi ya {jina} Mshamba na ATM
+
+Mara ya kwanza {jina} alipelekwa mjini akakutana na mashine kubwa yenye kitufe na kioo.  
+Marafiki wakamwambia: "Hii mashine inatoa hela yenyewe."  
+
+{jina} akashangaa: "Kwa hiyo hii ni kama mfuko wa mboga, ukiweka mkono inakuletea chakula?"  
+Wakamshawishi ajaribu. Akaona mtu akiweka kadi kisha hela ikatoka.  
+
+{jina} akasema: "Ahaa! Hii lazima ni ng’ombe wa chuma, unapoitikisa inatoa maziwa ya karatasi!" 😂  
+
+Mwisho wa Hadithi
+
+Baada ya kurudi kijijini, aliwaambia watu:  
+"Wameshafuga masanduku ya chuma mjini, yanaweza kuzaa hela kila saa. Siku nikileta moja kijijini, wote mtakula vizuri."  
+MWISHO`,
+
+`Hadithi ya {jina} Mshamba na WiFi
+
+Siku moja {jina} alifika mjini akaambiwa: "Hapa kuna WiFi, tumia bure."  
+Akauliza: "Hiyo ni chakula kipya au dawa ya malaria?"  
+
+Wakamwambia: "Hapana, ni mtandao wa hewani."  
+Akasema: "Kumbe wameshaweka nyavu angani hadi inabeba maneno ya watu!"  
+
+Alichukua simu akaanza kuzungusha juu akidhani atakamata kama samaki.  
+Baada ya kuona video kwenye YouTube akashangaa:  
+"Sasa hii WiFi inaleta watu wanaocheza muziki kutoka hewani. Hii lazima ni upepo wenye miziki ndani yake." 😂  
+
+Mwisho wa Hadithi
+
+Kurudi kijijini akawaambia:  
+"Mjini kuna upepo wa kisasa, ukivuta kidogo tu unakuletea habari na ngoma."  
+MWISHO`,
+
+`Hadithi ya {jina} Mshamba na Escalator
+
+{jina} alifika kwenye duka kubwa la mjini, akaona ngazi zinasogea zenyewe.  
+Akasema: "Hii sasa ni uchawi wa mchana kweupe, ngazi zinapanda na kushuka zenyewe bila mtu!"  
+
+Akaamua kupanda. Alipokanyaga tu zikaanza kumsogeza, akakaza mikono kwa hofu.  
+Akasema: "Wameweka mto wa chuma, unaonibeba bila kuniuliza ruhusa!"  
+
+Watu wakacheka, yeye akashuka akasema:  
+"Ngazi za kijijini ndizo za kweli, hizi za mjini zinataka kuninyonya miguu." 😂  
+
+Mwisho wa Hadithi
+
+Baada ya kurudi kijijini aliwaambia:  
+"Mjini hawana watumishi wa kupandisha mizigo, ngazi zenyewe zinatembea kama punda wa chuma."  
+MWISHO`,
+`Hadithi ya {jina} Mshamba na Redio ya Kijijini
+
+{jina} alikuwa hajawahi kuona redio ya umeme. Siku moja rafiki yake alimpa redio ndogo akamwambia:
+"Hii ikiwashwa, inaimba na kuzungumza peke yake."
+
+{jina} akaipeleka kwa majirani na kuanza kuzungusha volume. Sauti ikaanza kutoka:
+"Taarifa ya habari...!"
+
+Akashtuka na kusema:
+"Wee! Kuna mtu amejificha ndani ya boksi hii!"
+
+Akaanza kuzungusha redio, ikakamata stesheni ya muziki. Wimbo ukaanza kusikika.  
+{jina} akapiga kelele:
+"Hii boksi imekula wasanii! Imevamewa na taarabu!"
+
+Alipojaribu kuifungua, akachomoa waya akasema:
+"Aha! Sasa nimewatoa mateka waliokuwa wakilia ndani ya boksi!" 😂
+
+Mwisho wa Hadithi
+
+Baada ya muda kijiji kizima kilimcheka, wakaanza kumuita “Bwana Habari”.  
+Kila mara akisogea, watoto wanapiga kelele:  
+"Habari za saa mojaaa!" 😂  
+MWISHO`,
+
+`Hadithi ya {jina} Mshamba na Picha ya Pasipoti
+
+Siku moja {jina} alipelekwa mjini kupiga picha ya pasipoti. Aliingia studio, mpiga picha akasema:
+"Kaa sawa, usicheke, angalia kamera."
+
+Akaangalia kamera macho yakawa makubwa kama ng’ombe. Baada ya sekunde chache taa ikamulika *flash!*  
+{jina} akakurupuka:
+"Jamani, mmenipiga radi usiku wa mchana! Mbona sioni kitu?"
+
+Mpiga picha akamwambia:
+"Hiyo ni taa ya kamera, tumekuchukua picha."
+{jina} akashika kichwa:
+"Ee Mungu wangu! Hata roho yangu wamechukua ndani ya boksi hili!"
+
+Alipopewa picha mkononi akasema:
+"Wee! Mmeiweka roho yangu karatasi? Sasa nikikufa naona mtanipeleka kabatini badala ya kaburini." 😂
+
+Mwisho wa Hadithi
+
+Kutoka siku hiyo kijijini walimuita “Bwana Pasipoti”.  
+Kila akiingia dukani, watu wanamwambia:  
+"Huyu ndiye mtu anayeishi kwenye karatasi!" 😂  
+MWISHO`,
+
+`Hadithi ya {jina} Mshamba na Choo cha Umeme
+
+{jina} aliwahi kupelekwa mjini na marafiki zake. Walimpeleka kwenye hoteli yenye choo cha kisasa – kinachojisafisha chenyewe.  
+Akiingia, akakuta kiti kinang’aa na taa zikimulika.  
+Akasema:  
+"Wee! Hii ni meza ya kula au ni kiti cha kujisaidia?"
+
+Alipoketi, sensa ikawashwa maji *shuuuu!*  
+{jina} akaruka na bukta chini akapiga kelele:
+"Jamani! Hii meza inanipiga shambulio la maji! Nani ananioga huku bafuni?"
+
+Akakimbia koridoni akitaka msaada. Watu wote hotelini wakamcheka.  
+{jina} akasema kwa aibu:
+"Sasa najua mjini kila mtu ana choo mchawi, chenye macho na masikio. Mimi narudi kijijini kwangu na shimo langu la zamani." 😂
+
+Mwisho wa Hadithi
+
+Kwa aibu ile, {jina} hakurudi mjini tena kwa miaka miwili.  
+Na mpaka leo akiona maji yanapiga kelele anasema:  
+"Hii labda ni choo kimenifuata huku kijijini." 😂  
+MWISHO`,
+
+`Hadithi ya {jina} Mshamba na Simu ya Smart
+
+Kuna mshikaji mmoja kijijini anaitwa {jina}. Huyu bwana alikuwa hajawahi kuingia mjini hata siku moja. 
+Siku moja mjomba wake kutoka Dar es Salaam akaja kijijini na kumpa zawadi ya simu ya kisasa — smartphone.
+
+Kwa mshamba {jina}, hii ilikuwa kama kumpa paka leso akafute jasho. Aliichukua ile simu akaanza kuitazama kama kioo. 
+Aliingia ndani akaiweka kitandani, akaiangalia huku akijiuliza:
+"Wee... hii ni redio au ni runinga? Mbona haina antenna?"
+
+Kesho yake akaamua kujaribu kuipiga simu. Akabonyeza kila sehemu, ghafla ikatoa sauti ya Google Assistant:
+"Hello, how can I help you?"
+Yule mshamba akashtuka akatupa simu kitandani akakimbia nje kupiga kelele:
+"Watu wangu! Jamani simu inanitukana kizungu!" 😂
+
+Watu wakakusanyika, mmoja akamwambia:
+"Hii ni simu ya kisasa, unaweza kuongea nayo."
+{jina} akasema:
+"Acha uongo, binadamu tunaongea na binadamu, sasa hii chuma itanijibuje?"
+
+Akamshauri aulize kitu. Basi {jina} akainua simu kwa heshima na kusema:
+"Wee simu, nitafutie kuku wangu aliyepotea jana."
+Simu ikamjibu: “Sorry, I didn’t understand.”
+Yule mshamba akapiga kelele:
+"Nimeshajua! Simu hii ni mchawi, inajua mambo ya watu lakini haitaki kunisaidia!" 🤣
+
+
+Mambo yalipoharibika
+
+Siku nyingine alienda dukani na simu mkononi. Aliwasha camera kwa bahati mbaya, akaona uso wake kwenye screen. 
+Akakimbia akipiga kelele:
+"Jamani! Nimefungwa ndani ya simu! Hebu nisaidieni nitoke!"
+
+Mama mmoja dukani akamuuliza:
+"Mbona unaonekana humo humo?"
+{jina} akajibu:
+"Ndio maana nakwambia hii simu mchawi, imenimeza mimi mzima mzima, sasa sijui nitajitoa vipi." 😂
+
+Mwisho wa Hadithi
+
+Baada ya majanga haya, kijiji kizima kilianza kumuita “Bwana Simu”. 
+Watu walimcheka kila alipopita. Hatimaye, {jina} alikasirika na kusema:
+"Hii simu itaniharibia heshima yangu kijijini, bora niiuze nikae na nokia yangu ya tochi."
+
+Aliiuza kwa shilingi elfu kumi tu, kumbe ilikuwa iPhone mpya kabisa. 
+Sasa kila mtu mjini anampiga kelele:
+"{jina}, shujaa pekee aliyeuza ndege kwa bei ya kuku!" 🐓📱😂
+MWISHO`
+];
+const hadithiMjanja = [
+      `Polisi {jina} Mjanja alipokea taarifa kuwa genge la wezi linabeba vifaa vya wizi kwa gari.
+      Aliweka tracker ndogo ya GPS ndani ya sanduku feki, kisha akalirusha kwenye gari lao bila wao kujua.
+      Usiku ulipofika, alifuatilia mwendo wa GPS hadi mafichoni.
+      Akaweka mtego kimya kimya na kuwakamata wezi wote wakiwa hawajui wamefuatiliwa.`,
+
+      `{jina} Mjanja aligundua kuwa genge la wezi lilikuwa linatumia simu maalum kujibizana.
+      Badala ya kuwapigia, alituma signal feki (interference) na simu zao zikashindwa kuwasiliana.
+      Walipojaribu kukutana bila mpangilio, walijichanganya wenyewe.
+      {jina} aliwasubiri pale walipoangukia mtego na kuwakamata wote bila risasi moja kupigwa.`
+    ];
+
+    function andikaHadithi(type) {
+      const jina = document.getElementById("jina").value || "Shujaa";
+      let hadithi = "";
+
+      if(type === "mjanja"){
+        hadithi = mjanjaHadithi[Math.floor(Math.random() * mjanjaHadithi.length)].replace(/{jina}/g, jina);
+      } else if(type === "mshamba"){
+        hadithi = mshambaHadithi[Math.floor(Math.random() * mshambaHadithi.length)].replace(/{jina}/g, jina);
+      }
+
+      // Typing effect
+      hadithiBox.textContent = "";
+      let index = 0;
+      function typeWriter() {
+        if(index < hadithi.length){
+          hadithiBox.textContent += hadithi.charAt(index);
+          index++;
+          setTimeout(typeWriter, 25); // 25ms kati ya herufi
+        }
+      }
+      typeWriter();
+    }
+  </script>
+</body>
+</html>
